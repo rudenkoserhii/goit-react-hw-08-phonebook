@@ -1,22 +1,21 @@
 import styled from 'styled-components';
 
-export const ContactStyled = styled.div`
+export const FormStyled = styled.form`
     display: flex;
-    align-items: center;
-    gap: ${p => p.theme.space[3]}px;
-    padding: ${p => p.theme.space[2]}px;
-    border: ${p => p.theme.borders.grey};
+    width: 100%;
+    gap: ${p => p.theme.space[2]}px;
+    margin-bottom: ${p => p.theme.space[4]}px;
+`;
+
+export const InputStyled = styled.input`
+    flex-grow: 1;
+    padding: ${p => p.theme.space[3]}px;
+    border: ${p => p.theme.borders.dark};
     border-radius: ${p => p.theme.radii.normal};
-`;
-
-export const NameStyled = styled.p`
-    margin-top: ${p => p.theme.space[0]}px;
-    margin-bottom: ${p => p.theme.space[0]}px;
-`;
-
-export const NumberStyled = styled.p`
-    margin-top: ${p => p.theme.space[0]}px;
-    margin-bottom: ${p => p.theme.space[0]}px;
+    font: inherit;
+    line-height: ${p => p.theme.lineHeights.body};
+    letter-spacing: 0.01em;
+    resize: none;
 `;
 
 export const ButtonStyled = styled.button`

@@ -3,10 +3,11 @@ export const theme = {
     black: '#000',
     white: '#fff',
     grey: 'grey',
-    lightblue: 'aquamarine',
+    lightblue: '#3f51b5',
     red: 'red',
     green: 'green',
     lightgray: 'lightgray',
+    blue: 'blue',
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
@@ -33,6 +34,7 @@ export const theme = {
     none: 'none',
     normal: '1px solid rgba(0, 0, 0, 0.2)',
     grey: '1px solid grey',
+    dark: '1px solid rgba(33, 33, 33, 0.2)',
   },
   radii: {
     none: '0',
@@ -41,5 +43,6 @@ export const theme = {
   },
   shadows: {
     first: '0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2)',
-  },
+    second: '0px 4px 4px rgba(0, 0, 0, 0.15)',
+},
 };

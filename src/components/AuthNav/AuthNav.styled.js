@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-export const NavLinkStyled = styled(NavLink)`{
+export const NavLinkStyled = styled(NavLink)`
     display: inline-block;
     text-decoration: none;
     padding: ${p => p.theme.space[4]}px;
@@ -11,5 +11,4 @@ export const NavLinkStyled = styled(NavLink)`{
     &.active {
     color: ${p => p.theme.colors.red};
     }
-}
 `;
