@@ -2,7 +2,7 @@ export const theme = {
   colors: {
     black: '#000',
     white: '#fff',
-    gray: 'gray',
+    grey: 'grey',
     lightblue: 'aquamarine',
     red: 'red',
     green: 'green',
@@ -32,7 +32,7 @@ export const theme = {
   borders: {
     none: 'none',
     normal: '1px solid rgba(0, 0, 0, 0.2)',
-    lightgray: '1px solid lightgray',
+    grey: '1px solid grey',
   },
   radii: {
     none: '0',
