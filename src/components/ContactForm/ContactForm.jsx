@@ -36,7 +36,7 @@ export const ContactForm = () => {
 
         addContact({ 'id': nanoid(), 'name': name, 'phone': phone });
 
-        Notiflix.Notify.success(`${name} is added`);
+        toast.success(`${name} is added`);
 
         e.target.reset();
 

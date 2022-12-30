@@ -1,9 +1,9 @@
 import { Label, Input } from '../ContactForm/ContactForm.styled';
 import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
-import { addFilter } from 'redux/filterSlice';
+import { addFilter } from 'redux/filter/slice';
 
-export const Filter = () =>{
+export const ContactsFilter = () =>{
     const dispatch = useDispatch();
 
         const filterId = nanoid();

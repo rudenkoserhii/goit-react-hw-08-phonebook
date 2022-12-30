@@ -2,10 +2,13 @@ import { useSelector } from 'react-redux';
 import { Contact } from '../Contact/Contact';
 import { selectAllContacts } from 'redux/contacts/selectors';
 import { ContactListStyled } from './ContactList.styled';
+import { filterValue } from 'redux/filter/selectors';
 
 export const ContactList = () => {
     const contacts = useSelector(selectAllContacts);
-    const filter = useSelector(state => state.filter.value);
+    const filter = useSelector(filterValue);
+
+console.log(filter)
 
   return (
     <ContactListStyled>

@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 import { ContactStyled, NumberStyled, NameStyled, ButtonStyled } from './Contact.styled';
 
-export const Contact = ({ id, name, phone }) => {
+export const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(deleteContact(id));
   // const handleEdit = () => dispatch(editContact(id));
@@ -10,13 +10,13 @@ export const Contact = ({ id, name, phone }) => {
   return (
     <ContactStyled>
       <NameStyled>{name}</NameStyled>
-      <NumberStyled>{phone}</NumberStyled>
+      <NumberStyled>{number}</NumberStyled>
       <ButtonStyled type="button" onClick={handleDelete}>
         Delete
       </ButtonStyled>
-      <ButtonStyled type="button" onClick={handleEdit}>
+      {/* <ButtonStyled type="button" onClick={handleEdit}>
         Edit
-      </ButtonStyled>
+      </ButtonStyled> */}
     </ContactStyled>
   );
 };

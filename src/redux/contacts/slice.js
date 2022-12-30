@@ -18,47 +18,48 @@ const contactsSlice = createSlice({
         isLoading: false,
         error: null,
   },
-  extraReducers: {
-    [fetchContacts.pending]: handlePending,
-    [addContact.pending]: handlePending,
-    [deleteContact.pending]: handlePending,
-    [editContact.pending]: handlePending,
-    [fetchContacts.rejected]: handleRejected,
-    [addContact.rejected]: handleRejected,
-    [deleteContact.rejected]: handleRejected,
-    [editContact.rejected]: handleRejected,
-    [fetchContacts.fulfilled](state, action) {
+  extraReducers:  (builder) => {
+    builder
+      .addCase(fetchContacts.pending, handlePending)
+    .addCase(addContact.pending, handlePending)
+    .addCase(deleteContact.pending, handlePending)
+    .addCase(editContact.pending, handlePending)
+    .addCase(fetchContacts.rejected, handleRejected)
+    .addCase(addContact.rejected, handleRejected)
+    .addCase(deleteContact.rejected, handleRejected)
+    .addCase(editContact.rejected, handleRejected)
+    .addCase(fetchContacts.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
-    },
-    [addContact.fulfilled](state, action) {
+    })
+    .addCase(addContact.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items.push(action.payload);
-    },
-    [deleteContact.fulfilled](state, action) {
+    })
+    .addCase(deleteContact.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         const index = state.items.findIndex(
             contact => contact.id === action.payload.id
         );
         state.items.splice(index, 1);
-    },
-    [editContact.fulfilled](state, action) {
+    })
+    .addCase(editContact.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         const index = state.items.findIndex(
             contact => contact.id === action.payload.id
         );
         const item = { 'name': action.payload.name, 'number': action.payload.number };
-        items[index] = item;
-    },
-    [logOut.fulfilled](state) {
+        state.items[index] = item;
+    })
+    .addCase(logOut.fulfilled, (state) => {
         state.items = [];
         state.error = null;
         state.isLoading = false;
-    },
+    })
   },
 });
 

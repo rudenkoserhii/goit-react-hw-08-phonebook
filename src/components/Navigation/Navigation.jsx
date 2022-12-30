@@ -1,5 +1,5 @@
 import { useAuth } from 'hooks';
-import { NavLinkStyled } from './NavLinkStyled.styled';
+import { NavLinkStyled } from './Navigation.styled';
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
@@ -10,7 +10,7 @@ export const Navigation = () => {
         Home
       </NavLinkStyled>
       {isLoggedIn && (
-        <NavLinkStyled to="/tasks">
+        <NavLinkStyled to="/contacts">
           Contacts
         </NavLinkStyled>
       )}
