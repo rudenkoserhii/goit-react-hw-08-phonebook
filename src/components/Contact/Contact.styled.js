@@ -10,21 +10,47 @@ export const ContactStyled = styled.div`
 `;
 
 export const NameStyled = styled.p`
-    margin-top: ${p => p.theme.space[0]}px;
-    margin-bottom: ${p => p.theme.space[0]}px;
+    width: ${p => p.theme.space[8]}px;
+    font-weight: ${p => p.theme.fontWeights.bold};
+
 `;
 
 export const NumberStyled = styled.p`
-    margin-top: ${p => p.theme.space[0]}px;
-    margin-bottom: ${p => p.theme.space[0]}px;
+    width: ${p => p.theme.space[7]}px;
+    font-weight: ${p => p.theme.fontWeights.bold};
+
 `;
 
-export const ButtonStyled = styled.button`
+export const ButtonStyledDelete = styled.button`
+    width: ${p => p.theme.space[7]}px;
+
     border: none;
     font: inherit;
     cursor: pointer;
     outline: none;
     margin-left: auto;
+    border-radius: ${p => p.theme.radii.normal};
+    padding: ${p => p.theme.space[3]}px ${p => p.theme.space[4]}px;
+    background-color: ${p => p.theme.colors.lightblue};
+    color: ${p => p.theme.colors.white};
+
+    &:hover,
+    &:focus {
+    background-color: ${p => p.theme.colors.blue};
+    }
+
+    &:active {
+    ${p => p.theme.shadows.second};
+    }
+`;
+
+export const ButtonStyledEdit = styled.button`
+    width: ${p => p.theme.space[7]}px;
+
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
     border-radius: ${p => p.theme.radii.normal};
     padding: ${p => p.theme.space[3]}px ${p => p.theme.space[4]}px;
     background-color: ${p => p.theme.colors.lightblue};

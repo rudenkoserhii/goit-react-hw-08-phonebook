@@ -10,7 +10,16 @@ export const Text = styled.p`
     font-weight: ${p => p.theme.fontWeights.bold};
 `;
 
+export const Span = styled.span`
+    font-weight: ${p => p.theme.fontWeights.bold};
+    font-size: ${p => p.theme.fontSizes.ml};
+
+    color: ${p => p.theme.colors.lightblue};
+`;
+
 export const ButtonStyled = styled.button`
+    width: ${p => p.theme.space[7]}px;
+
     border: none;
     font: inherit;
     cursor: pointer;

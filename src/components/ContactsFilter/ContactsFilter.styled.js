@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const Title = styled.h3`
+export const Title = styled.p`
+    font-weight: ${p => p.theme.fontWeights.bold};
+    padding: ${p => p.theme.space[4]}px;
+
 `;
 
 export const InputStyled = styled.input`
@@ -12,5 +15,10 @@ export const InputStyled = styled.input`
     line-height: ${p => p.theme.lineHeights.body};
     letter-spacing: 0.01em;
     resize: none;
+
+    margin-bottom: ${p => p.theme.space[4]}px;
+
 `;
+
+
 

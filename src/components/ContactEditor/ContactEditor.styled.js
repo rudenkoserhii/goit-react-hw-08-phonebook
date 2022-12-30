@@ -19,6 +19,8 @@ export const InputStyled = styled.input`
 `;
 
 export const ButtonStyled = styled.button`
+    width: ${p => p.theme.space[8]}px;
+
     border: none;
     font: inherit;
     cursor: pointer;

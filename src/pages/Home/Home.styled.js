@@ -7,8 +7,5 @@ export const Wrapper = styled.div`
     justify-content: center;
 `;
 
-export const Title = styled.h1`
-    text-align: center;
-    font-size: ${p => p.theme.fontSizes.xl};
-    font-weight: ${p => p.theme.fontWeights.bold};
+export const Img = styled.img`
 `;

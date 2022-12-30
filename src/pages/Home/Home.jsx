@@ -1,11 +1,10 @@
-import { Wrapper, Title } from "./Home.styled";
+import { Wrapper, Img } from "./Home.styled";
+import phoneBook from './phone-book.png';
 
 export default function Home() {
   return (
     <Wrapper>
-      <Title>
-        Contacts manager welcome page
-      </Title>
+      <Img src={phoneBook}/>
     </Wrapper>
   );
 }

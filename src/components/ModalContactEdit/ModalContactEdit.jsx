@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { editContact } from 'redux/contacts/operations';
 import { Wrapper, Overlay, FormStyled, InputStyled, ButtonStyled } from './ModalContactEdit.styled';
 import PropTypes from 'prop-types';
+import { toast } from "react-hot-toast";
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -19,6 +20,7 @@ export const ModalContactEdit = ({ onClose, id, name, number }) => {
         else if (number !== form.elements.number.value && form.elements.number.value !== '') { objContact.number = form.elements.number.value }
     dispatch(editContact({id, objContact}));
     form.reset();
+    toast.success(`Contact changed to ${objContact.name} with phone number ${objContact.number}`)
     onClose()
   };
 
@@ -54,7 +56,7 @@ export const ModalContactEdit = ({ onClose, id, name, number }) => {
                             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +" defaultValue={number}
                             />
                 <ButtonStyled type="submit">
-                    Edit contact
+                    Change
                 </ButtonStyled>
                 </FormStyled>
             </Wrapper>

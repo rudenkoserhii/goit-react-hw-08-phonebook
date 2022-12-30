@@ -2,13 +2,17 @@ import { ModalContactEdit } from 'components/ModalContactEdit/ModalContactEdit';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { deleteContact } from 'redux/contacts/operations';
-import { ContactStyled, NumberStyled, NameStyled, ButtonStyled } from './Contact.styled';
+import { ContactStyled, NumberStyled, NameStyled, ButtonStyledDelete, ButtonStyledEdit } from './Contact.styled';
 import PropTypes from 'prop-types';
+import { toast } from 'react-hot-toast';
 
 export const Contact = ({ id, name, number }) => {
   const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
-  const handleDelete = () => dispatch(deleteContact(id));
+  const handleDelete = () => {
+    dispatch(deleteContact(id));
+    toast.success(`${name} was deleted!`)
+  };
   const toggleModal = () => {
     setShowModal(!showModal);
   };
@@ -16,12 +20,12 @@ export const Contact = ({ id, name, number }) => {
     <ContactStyled>
       <NameStyled>{name}</NameStyled>
       <NumberStyled>{number}</NumberStyled>
-      <ButtonStyled type="button" onClick={handleDelete}>
+      <ButtonStyledDelete type="button" onClick={handleDelete}>
         Delete
-      </ButtonStyled>
-      <ButtonStyled type="button" onClick={toggleModal}>
+      </ButtonStyledDelete>
+      <ButtonStyledEdit type="button" onClick={toggleModal}>
         Edit
-      </ButtonStyled>
+      </ButtonStyledEdit>
     {(showModal) && <ModalContactEdit id={id} name={name} number={number} onClose={toggleModal}/>}
     </ContactStyled>
   );

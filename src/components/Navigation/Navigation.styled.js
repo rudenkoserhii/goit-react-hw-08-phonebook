@@ -9,6 +9,11 @@ export const NavLinkStyled = styled(NavLink)`
     color: ${p => p.theme.colors.grey};
 
     &.active {
-    color: ${p => p.theme.colors.red};
+    color: ${p => p.theme.colors.lightblue};
     }
+
+    :hover:not(.active) {
+    color: ${p => p.theme.colors.blue};
+    }
+
 `;
