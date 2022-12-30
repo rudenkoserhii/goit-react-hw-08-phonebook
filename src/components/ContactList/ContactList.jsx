@@ -1,20 +1,21 @@
-import { ContactListStyled } from './ContactList.styled';
-import { ContactItem } from './ContactItem';
 import { useSelector } from 'react-redux';
-import { useGetContactsQuery } from 'redux/contactsSlice';
-
+import { Contact } from '../Contact/Contact';
+import { selectAllContacts } from 'redux/contacts/selectors';
+import { ContactListStyled } from './ContactList.styled';
 
 export const ContactList = () => {
-    const filter = useSelector(state => state.filter.filter);
+    const contacts = useSelector(selectAllContacts);
+    const filter = useSelector(state => state.filter.value);
 
-    const { data: contacts, error, isLoading } = useGetContactsQuery();
-
-    return (
-        <ContactListStyled>
-            {error && <p>Ups... Something going wrong! Please, refresh page and try again!</p>}
-            {isLoading && <b>Loading...</b>}
-            {contacts && contacts
-                .filter(contact => contact.name.toLowerCase().includes(filter))
-                .map(({ id, name, phone }) => <ContactItem key={id} name={name} phone={phone} id={id}/>)}
-        </ContactListStyled>
-)};
+  return (
+    <ContactListStyled>
+      {contacts
+            .filter(contact => contact.name.toLowerCase().includes(filter))
+            .map(({ id, name, number }) => (
+            <li key={id}>
+            <Contact id={id} name={name} number={number} />
+            </li>
+      ))}
+    </ContactListStyled>
+  );
+};
