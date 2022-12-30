@@ -52,7 +52,7 @@ const contactsSlice = createSlice({
         const index = state.items.findIndex(
             contact => contact.id === action.payload.id
         );
-        const item = { 'name': action.payload.name, 'number': action.payload.number };
+        const item = { 'id': action.payload.id, 'name': action.payload.name, 'number': action.payload.number };
         state.items[index] = item;
     })
     .addCase(logOut.fulfilled, (state) => {

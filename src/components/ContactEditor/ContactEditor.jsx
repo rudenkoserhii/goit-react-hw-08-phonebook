@@ -11,10 +11,7 @@ export const ContactEditor = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
-console.log(form.elements.name.value)
-console.log(form.elements.number.value)
     const objContact = { 'name': form.elements.name.value, 'number': form.elements.number.value };
-console.log(objContact)
 
     if (form.elements.name.value !== '' || form.elements.number.value !== '') {
         if (contacts.some(contact => contact.name === form.elements.name.value)) {

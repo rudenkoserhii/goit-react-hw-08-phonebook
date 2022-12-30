@@ -8,3 +8,6 @@ export const ContactListStyled = styled.ul`
   grid-template-columns: 1fr;
   grid-gap: ${p => p.theme.space[5]}px;
 `;
+
+export const Li = styled.li`
+`;
